@@ -18,19 +18,34 @@ def get_all_comments_list(request):
     return Response(serializer.data)
 
 
-# @api_view(['GET', 'POST'])
-# @permission_classes([IsAuthenticated])
-# def user_comment_detail(request):
-#     print(
-#         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
-#     if request.method == 'POST':
-#         serializer = CommentSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save(user=request.user)
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#     elif request.method == 'GET':
-#         cars = Car.objects.filter(user_id=request.user.id)
-#         serializer = CarSerializer(cars, many=True)
-#         return Response(serializer.data)
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def user_comment_detail(request):
+    print(
+        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    if request.method == 'POST':
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'GET':
+        comments = Comment.objects.filter(user_id=request.user.id)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
 
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def user_replies_detail(request):
+    print(
+        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    if request.method == 'POST':
+        serializer = ReplySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'GET':
+        comments = Comment.objects.filter(user_id=request.user.id)
+        serializer = ReplySerializer(comments, many=True)
+        return Response(serializer.data)
