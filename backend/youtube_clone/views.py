@@ -29,8 +29,14 @@ def user_comment_detail(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
-        comments = Comment.objects.filter(user_id=request.user.id)
+
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_comment_by_id(request, pk):       
+    if request.method == 'GET':
+        comments = Comment.objects.filter(video_id=pk)
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
