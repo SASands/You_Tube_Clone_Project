@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('',)
-    path()
+    path('',views.get_all_comments_list),
+    # path('<int:pk>/', views.user_comment_detail),
 ]
