@@ -34,13 +34,13 @@ def user_comment_detail(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_comment_by_id(request, pk):       
+def comment_by_id(request, video_id):       
     if request.method == 'GET':
-        comments = Comment.objects.filter(video_id=pk)
+        comments = Comment.objects.filter(video_id=video_id)
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
-@api_view(['GET', 'POST'])
+@api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def user_replies_detail(request):
     print(
@@ -51,7 +51,11 @@ def user_replies_detail(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
-        comments = Comment.objects.filter(user_id=request.user.id)
-        serializer = ReplySerializer(comments, many=True)
-        return Response(serializer.data)
+
+
+@api_view(['Get'])
+@permission_classes([IsAuthenticated])
+def replies_by_id(request, pk):
+    replies = Reply.objects.filter(comment_id=pk)
+    serializer = ReplySerializer(replies, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

@@ -10,5 +10,6 @@ class CommentSerializer(serializers.ModelSerializer):
 class ReplySerializer(serializers.ModelSerializer):
     class Meta:
         model = Reply
-        fields = ['user','comment','text']
+        fields = ['id','user','comment_id','comment','text']
         depth = 1
+    comment_id = serializers.CharField(write_only=True)

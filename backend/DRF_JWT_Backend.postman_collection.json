@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b7cf7f89-9867-46e1-8b07-a1011c84f1fb",
+		"_postman_id": "9599ba88-a505-437b-a869-4ea3b8729b25",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\",\r\n    \"email\": \"dan@devcodecamp.com\",\r\n    \"first_name\": \"Daniel\",\r\n    \"last_name\": \"Tulpa\"\r\n}",
+							"raw": "{\r\n    \"username\": \"MrlittleWicks\",\r\n    \"password\": \"password1@\",\r\n    \"email\": \"onlysmallwicks@devcodecamp.com\",\r\n    \"first_name\": \"Henry\",\r\n    \"last_name\": \"Wickerson\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -49,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\"\r\n}",
+							"raw": "{\r\n    \"username\": \"MrlittleWicks\",\r\n    \"password\": \"password1@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"refresh\": \"PASTE REFRESH TOKEN FROM LOGIN HERE\"\r\n}",
+							"raw": "{\r\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1MzI1MDU3OSwiaWF0IjoxNjUxNTIyNTc5LCJqdGkiOiIzNjhmZTliMWYwNTY0ZWUwYmJhNGFjM2YyMTliMWNmYyIsInVzZXJfaWQiOjQsInVzZXJuYW1lIjoiTXJsaXR0bGVXaWNrcyIsImZpcnN0X25hbWUiOiJIZW5yeSJ9.ev7aISzoQfKbZek8c5he-oiHqbQU-jyKoJWKDAzTu_U\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,9 +229,37 @@
 			"item": [
 				{
 					"name": "GET_all_comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/youtube_clone/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"youtube_clone",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -239,7 +267,143 @@
 					"name": "GET All_comments_By_Id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNDU3NzA4LCJpYXQiOjE2NTE1OTM3MDgsImp0aSI6ImQyN2U0ZWIwYWViNTQ1NTA4MjBlYTAwZDJiOGNmMDg2IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJNcmxpdHRsZVdpY2tzIiwiZmlyc3RfbmFtZSI6IkhlbnJ5In0.kPl-7_jKpKepuwZAZQFfEGaKsioAOed2_x_FbSVYoZw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/youtube_clone/comment/CNgOmcYCOPw/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"youtube_clone",
+								"comment",
+								"CNgOmcYCOPw",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMzg4ODkyLCJpYXQiOjE2NTE1MjI1NzksImp0aSI6IjdkN2M1NTY5Zjc3ZDRjZDM4NTFkZTIwODYyZTI2ZmI3IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJNcmxpdHRsZVdpY2tzIiwiZmlyc3RfbmFtZSI6IkhlbnJ5In0.Rn6QCFgpV37ggYbHr469C2hB7uhK7Xk3OgEt6ElIDJw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"user\": 4,\r\n        \"video_id\": \"CNgOmcYCOPw\",\r\n        \"text\": \"ride ir die\",\r\n        \"likes\": 10000,\r\n        \"dislikes\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/youtube_clone/comment/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"youtube_clone",
+								"comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post reply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNDU3NzA4LCJpYXQiOjE2NTE1OTM3MDgsImp0aSI6ImQyN2U0ZWIwYWViNTQ1NTA4MjBlYTAwZDJiOGNmMDg2IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJNcmxpdHRsZVdpY2tzIiwiZmlyc3RfbmFtZSI6IkhlbnJ5In0.kPl-7_jKpKepuwZAZQFfEGaKsioAOed2_x_FbSVYoZw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"user\": 4,\r\n        \"comment_id\": 1,\r\n        \"text\": \"This is a test reply\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/youtube_clone/replies/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"youtube_clone",
+								"replies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get reply by comment id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNDU3NzA4LCJpYXQiOjE2NTE1OTM3MDgsImp0aSI6ImQyN2U0ZWIwYWViNTQ1NTA4MjBlYTAwZDJiOGNmMDg2IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJNcmxpdHRsZVdpY2tzIiwiZmlyc3RfbmFtZSI6IkhlbnJ5In0.kPl-7_jKpKepuwZAZQFfEGaKsioAOed2_x_FbSVYoZw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/youtube_clone/replies/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"youtube_clone",
+								"replies",
+								"1",
+								""
+							]
+						}
 					},
 					"response": []
 				}
