@@ -6,6 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import PageComponent from "./pages/PageComponent/PageComponent";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -31,8 +32,16 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
+      <Routes>
+        <Route>
+          <PrivateRoute>
+            <PageComponent.jsx />
+          </PrivateRoute>
+        </Route>
+      </Routes>
     </div>
   );
 }
+
 
 export default App;
