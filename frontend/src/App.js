@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SearchPageComponent from "./pages/SearchPageComponent/SearchPageComponent";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -26,6 +27,7 @@ function App() {
             <PrivateRoute>
              <HomePage />
              <SearchPageComponent />
+             <VideoPlayer />
             </PrivateRoute>
           }
         />
