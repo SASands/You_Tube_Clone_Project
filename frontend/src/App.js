@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/page" element={<PrivateRoute><SearchPageComponent /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+
         
       </Routes>
       <Footer />
