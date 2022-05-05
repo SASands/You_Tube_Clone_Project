@@ -1,5 +1,6 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import { useState } from 'react';
 import "./App.css";
 
 // Pages Imports
@@ -15,9 +16,20 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import SearchBar from "./components/SearchBar/SearchBar";
+
+
 
 function App() {
+  // figure out what you want yoru defualt video to be, you can copy its title and description and set them as the defualt values for the hooks below
+const [currentVideoId, setCurrentVideoId] = useState("cpP-fCo8Dn4")
+const [currentVideoTitle, setCurrentVideoTitle] = useState("Welcome to our backdoor Trailer park boys YouTube Clone. Where styling isn't gonna happen but functionality is on point. ")
+const [currentVideoDescription, setCurrentVideoDescription] = useState("Soft Welcome to a pulsing API")
+// hooks to save data from related video call
+
+
+// axios call for related videos here
+// would also need make a new compoent do dispaly related videos
+// we will call that compoent right under the VideoPlayer below
   return (
     <div>
       <Navbar />
@@ -27,8 +39,8 @@ function App() {
           element={
             <PrivateRoute>
              <HomePage />
-             <SearchPageComponent />
-             <VideoPlayer />
+             <SearchPageComponent setCurrentVideoId={setCurrentVideoId} setCurrentVideoDescription={setCurrentVideoDescription} setCurrentVideoTitle={setCurrentVideoTitle}/>
+             <VideoPlayer videoId={currentVideoId} currentVideoTitle={currentVideoTitle} currentVideoDescription={currentVideoDescription}/>
             </PrivateRoute>
           }
         />

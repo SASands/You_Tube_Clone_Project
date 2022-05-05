@@ -1,13 +1,18 @@
 import React from 'react';
 import SearchPageComponent from '../../pages/SearchPageComponent/SearchPageComponent';
 
-const VideoPlayer = () => {
+const VideoPlayer = (props) => {
     return(
+        <div>
+            <p>{props.currentVideoTitle}</p>
         <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/bp5qlPE_kv8" 
+        src={`https://www.youtube.com/embed/${props.videoId}`}
     title="YouTube video player" 
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen></iframe>
+    allowfullscreen></iframe> 
+        <p>{props.currentVideoDescription}</p>
+        </div>
+       
 
 )}
         

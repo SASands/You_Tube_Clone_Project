@@ -9,7 +9,7 @@ import '../../components/SearchBar/SearchBar.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx';
 
 
-function SearchPageComponent(){
+function SearchPageComponent(props){
 //Hooks
 const [searchResults, setSearchResults] = useState([])
 
@@ -24,7 +24,12 @@ async function getSearchResults(searchVideos= 'woodworking'){
     setSearchResults(response.data.items)                    
 
 }
-
+const handleClick = (event, id, title, description) => {
+    event.preventDefault();
+    props.setCurrentVideoId(id)
+    props.setCurrentVideoDescription(description)
+    props.setCurrentVideoTitle(title)
+}
 
 
 
@@ -39,7 +44,7 @@ async function getSearchResults(searchVideos= 'woodworking'){
                 {searchResults.map(video =>(
                     <span>
                         <div class = "relatedVideo">
-                        <img type="image" 
+                        <input type="image" 
                                 onClick={(event) => handleClick(event, video.id.videoId, video.snippet.title, video.snippet.description)}
                                 src = {video.snippet.thumbnails.medium.url}
                                 />
