@@ -22,7 +22,9 @@ const SearchBar = (props) => {
             <div className='SearchBar' >
                 <input type='text' placeholder='Search Youtube' value= {searchRequest} onChange={(event) => setSearchRequest(event.target.value)}/>
             </div>
+            <div className='SearchButton'>
             <button type="submit">Search</button>
+            </div>
         </form>
 
 
