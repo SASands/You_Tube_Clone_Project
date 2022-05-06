@@ -15,6 +15,7 @@ const [searchResults, setSearchResults] = useState([])
 
 useEffect(() => {
     getSearchResults()
+    
 }, [])
 
 
@@ -24,13 +25,22 @@ async function getSearchResults(searchVideos= 'woodworking'){
     setSearchResults(response.data.items)                    
 
 }
+
+
+
+
+
+
+
+
 const handleClick = (event, id, title, description) => {
     event.preventDefault();
     props.setCurrentVideoId(id)
     props.setCurrentVideoDescription(description)
     props.setCurrentVideoTitle(title)
+    props.getRelatedVideos(id)
 }
-
+// get related video, call getRelatedVideo in HandleClick 
 
 
 
@@ -55,6 +65,9 @@ const handleClick = (event, id, title, description) => {
             </div>
         </div>
     );
+
+
+    
 }
 export default SearchPageComponent;
 
