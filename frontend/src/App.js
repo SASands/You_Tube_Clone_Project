@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SearchPageComponent from "./pages/SearchPageComponent/SearchPageComponent";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
-import RelatedVideos from "./components/RelatedVideos/RelatedVideos"
+import CallRelatedVideos from "./components/RelatedVideos/RelatedVideos"
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -52,7 +52,7 @@ async function getRelatedVideos(currentVideoId){
              <HomePage />
              <SearchPageComponent setCurrentVideoId={setCurrentVideoId} setCurrentVideoDescription={setCurrentVideoDescription} setCurrentVideoTitle={setCurrentVideoTitle}/>
              <VideoPlayer videoId={currentVideoId} currentVideoTitle={currentVideoTitle} currentVideoDescription={currentVideoDescription}/>
-             <RelatedVideos  getRelatedVideos = {getRelatedVideos} relatedVideos={relatedVideos} setCurrentVideoId={setCurrentVideoId} setCurrentVideoDescription={setCurrentVideoDescription} setCurrentVideoTitle={setCurrentVideoTitle}/>
+             <CallRelatedVideos  setRelatedVideos = {setRelatedVideos} relatedVideos={relatedVideos} setCurrentVideoId={setCurrentVideoId} setCurrentVideoDescription={setCurrentVideoDescription} setCurrentVideoTitle={setCurrentVideoTitle}/>
             </PrivateRoute>
           }
         />

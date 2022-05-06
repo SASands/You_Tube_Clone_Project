@@ -38,7 +38,7 @@ const handleClick = (event, id, title, description) => {
     props.setCurrentVideoId(id)
     props.setCurrentVideoDescription(description)
     props.setCurrentVideoTitle(title)
-    props.getRelatedVideos(id)
+    props.RelatedVideos(id)
 }
 // get related video, call getRelatedVideo in HandleClick 
 

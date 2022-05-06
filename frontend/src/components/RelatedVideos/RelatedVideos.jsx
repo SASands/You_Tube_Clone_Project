@@ -1,18 +1,15 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-
+// import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import "../../App.js";
+// import PrivateRoute from "./utils/PrivateRoute";
 
 //component imports 
-import SearchBar from '../SearchBar/SearchBar';
 
 
-function RelatedVideos(props){
+
+function CallRelatedVideos(props){
 
 
-useEffect(() => {
-    // RelatedVideos(props.currentVideoId)
-    
-}, [])
 
 
 
@@ -22,7 +19,7 @@ const handleClick = (event, id, title, description) => {
     props.setCurrentVideoId(id)
     props.setCurrentVideoDescription(description)
     props.setCurrentVideoTitle(title)
-    props.relatedVideos(id)
+    props.setRelatedVideos(id)
 
 }
 // need to setup return and this is also were we will map over props.realtedVideos, this will also look almost the same as search page component
@@ -49,7 +46,7 @@ return(
 
 
 }
-export default RelatedVideos;
+export default CallRelatedVideos;
 
 
 
