@@ -3,7 +3,7 @@ import SearchPageComponent from '../../pages/SearchPageComponent/SearchPageCompo
 
 const VideoPlayer = (props) => {
     return(
-        <div>
+        <div className='VideoPlayer'>
             <p>{props.currentVideoTitle}</p>
         <iframe width="560" height="315" 
         src={`https://www.youtube.com/embed/${props.videoId}`}
