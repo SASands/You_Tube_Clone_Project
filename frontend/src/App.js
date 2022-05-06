@@ -25,8 +25,8 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   // figure out what you want yoru defualt video to be, you can copy its title and description and set them as the defualt values for the hooks below
 const [currentVideoId, setCurrentVideoId] = useState("cpP-fCo8Dn4")
-const [currentVideoTitle, setCurrentVideoTitle] = useState("Welcome to our backdoor Trailer park boys YouTube Clone. Where styling isn't gonna happen but functionality is on point. ")
-const [currentVideoDescription, setCurrentVideoDescription] = useState("Soft Welcome to a pulsing API")
+const [currentVideoTitle, setCurrentVideoTitle] = useState(<p className="VideoTitle">"Welcome to our backdoor Trailer park boys YouTube Clone. Where styling isn't gonna happen but functionality is on point. "</p>)
+const [currentVideoDescription, setCurrentVideoDescription] = useState(<p className="VideoDescription">"Soft Welcome to a pulsing API"</p>)
 
 // hooks to save data from related video call
 const [relatedVideos, setRelatedVideos] = useState([])

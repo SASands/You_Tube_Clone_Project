@@ -22,18 +22,18 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid darkgray;
+  color: darkgray;
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
   padding: 0.5rem 0.5rem;
+  cursor: grabbing;
 }
 
 button:hover {
-  cursor: pointer;
+  cursor: grabbing;
   color: white;
-  background-color: steelblue;
 }
 
 .container {
@@ -41,6 +41,7 @@ button:hover {
   max-width: 600px;
   overflow: auto;
   text-align: center;
+  color: darkgray;
 }
 
 .form {
@@ -58,5 +59,19 @@ button:hover {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+}
+
+.VideoTitle{
+  font: italic;
+  color: darkgray;
+  font-display: initial;
+  font-style: oblique;
+}
+
+.VideoDescription{
+  font: italic;
+  color: darkgray;
+  font-display: initial;
+  font-style: oblique;
 }
 
