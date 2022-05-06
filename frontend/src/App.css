@@ -6,11 +6,14 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  background-color: black;
 }
 
 html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-emphasis-color: white;
+  background-color: black;
 }
 
 p {
@@ -56,3 +59,4 @@ button:hover {
   padding: 3px 7px;
   font-size: 17px;
 }
+

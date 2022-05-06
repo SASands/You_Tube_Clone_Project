@@ -62,7 +62,9 @@ async function getRelatedVideos(currentVideoId){
 
         
       </Routes>
+      <div className="footer">
       <Footer />
+      </div>
     </div>
   );
 }

@@ -49,7 +49,9 @@ const handleClick = (event, id, title, description) => {
     return(
         <div className="searchResults">
         {/* Place searchBar component here */}
+        <div className='SearchBar'>
         <SearchBar getSearchResults={getSearchResults}/>
+        </div>
             <div className="allSearchResults">
                 {searchResults.map(video =>(
                     <span>
